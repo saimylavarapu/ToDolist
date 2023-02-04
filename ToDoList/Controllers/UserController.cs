@@ -9,7 +9,7 @@ namespace ToDoList.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        //User Tasks
+        //User Controller
         private readonly IUserRepository _UserRepo;
         public UserController(IUserRepository UserRepo)
         {
@@ -18,12 +18,12 @@ namespace ToDoList.Controllers
         //Get All Uers data 
         [HttpGet]
         [Route("GetAllUsers")]
-        public async Task<IActionResult>GetAllUsers()
+        public async Task<List<UserDTOALL>> GetAllUsers()
         {
             try
             {
                var user=await  _UserRepo.GetAllUsers();
-                return Ok(user);
+                return user;
 
             }
             catch(Exception ex)
