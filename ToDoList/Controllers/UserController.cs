@@ -35,12 +35,12 @@ namespace ToDoList.Controllers
         // Get By ID User
         [HttpGet]
         [Route("GetByID")]
-        public async Task<IActionResult>GetByID(int id)
+        public async Task<List<GetByIDDTO>>GetByID(int id)
         {
             try
             {
                 var user = await _UserRepo.GetUserBYId(id);
-                return Ok(user);
+                return user;
 
             }
             catch(Exception ex)

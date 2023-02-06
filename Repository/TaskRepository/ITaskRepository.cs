@@ -11,7 +11,7 @@ namespace Repository.TaskRepository
     public interface ITaskRepository
     {
         Task<List<TaskDTO>> GetAllTask();
-        Task<TaskByIDDTO> GetTaskBYId(int ID);
+        Task<List<TaskByIDDTO>> GetTaskBYId(int ID);
         Task UpdateTask(UpdateDTO user);
         Task DeleteTask(int ID);
         Task<bool> AddTask(AddTaskDTO user);

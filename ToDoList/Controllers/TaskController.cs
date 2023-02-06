@@ -4,6 +4,7 @@ using Models.DTO.TaskDTO;
 using Models.DTO.UserDTO;
 using Repository.TaskRepository;
 using Repository.UserRepository;
+using System.Collections.Generic;
 
 namespace ToDoList.Controllers
 {
@@ -37,12 +38,12 @@ namespace ToDoList.Controllers
         //Get By ID Task
         [HttpGet]
         [Route("GetByID")]
-        public async Task<IActionResult> GetByID(int id)
+        public async Task<List<TaskByIDDTO>> GetByID(int id)
         {
             try
             {
                 var user =await _TaskRepo.GetTaskBYId(id);
-                return Ok(user);
+                return user;
 
             }
             catch (Exception ex)

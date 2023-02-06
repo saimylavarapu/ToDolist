@@ -83,7 +83,7 @@ namespace Repository.UserRepository
                     Password = x.Password,
                     IsActive = x.IsActive,
                     ISDelete = x.ISDelete,
-                    Tasks=x.Tasks.ToList()
+                    Tasks=x.Tasks.ToList(),
                 }).ToListAsync();
                 return users;
             }
@@ -93,7 +93,7 @@ namespace Repository.UserRepository
             }
         }
 
-        public async Task<GetByIDDTO> GetUserBYId(int ID)
+        public async Task<List<GetByIDDTO>> GetUserBYId(int ID)
         {
            
                 var USER = await _context.Users.Where(X => X.UserID == ID).Select(X=>new GetByIDDTO
@@ -107,7 +107,7 @@ namespace Repository.UserRepository
                     ISDelete=X.ISDelete,
                     CreatedDate=X.CreatedDate,
                     
-                } ).FirstOrDefaultAsync();
+                } ).ToListAsync();
             return USER;
            
         }

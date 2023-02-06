@@ -10,7 +10,7 @@ namespace Repository.UserRepository
     public interface IUserRepository
     {
         Task<List<UserDTOALL>> GetAllUsers();
-        Task<GetByIDDTO> GetUserBYId(int ID);
+        Task<List<GetByIDDTO>> GetUserBYId(int ID);
         Task UpdateUser(UpdateUerDTO user);
         Task DeleteUser(int ID);
 

@@ -81,7 +81,7 @@ namespace Repository.TaskRepository
             }
         }
 
-        public async Task<TaskByIDDTO> GetTaskBYId(int ID)
+        public async Task<List<TaskByIDDTO>> GetTaskBYId(int ID)
         {
 
             var USER = await _context.tasks.Where(X => X.TaskID == ID).Select(X => new TaskByIDDTO
@@ -93,7 +93,7 @@ namespace Repository.TaskRepository
                 IsActive = X.IsActive
 
 
-            }).FirstOrDefaultAsync();
+            }).ToListAsync();
             return USER;
         }
 
