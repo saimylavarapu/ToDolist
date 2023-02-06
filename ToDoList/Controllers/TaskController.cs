@@ -21,12 +21,12 @@ namespace ToDoList.Controllers
         //Get All Tasks
         [HttpGet]
         [Route("GetAllTasks")]
-        public async Task<IActionResult> GetAllTasks()
+        public async Task<List<TaskDTO>> GetAllTasks()
         {
             try
             {
                 var user = await _TaskRepo.GetAllTask();
-                return Ok(user);
+                return user;
 
             }
             catch (Exception ex)
