@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { GetByIDDTO, UpdateUerDTO, UserClient } from '../shared/apiservice.service';
+import { GetByIDDTO, UpdateUerDTO, UserClient, UserDTOALL } from '../shared/apiservice.service';
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-edit',
@@ -12,10 +12,11 @@ export class EditComponent implements OnInit {
   id: any;
   details!: GetByIDDTO;
  
+ 
   
  
   constructor(private service: UserClient, private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router,) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
