@@ -43,7 +43,7 @@ import { EdittaskComponent } from './edittask/edittask.component';
       { path: 'edit/:id', component: EditComponent },
       { path: 'viewalltask', component: ViewAlltasksComponent },
       { path: 'viewtask/:id', component: ViewTasksComponent },
-      { path: 'edittask/:id', component: ViewTasksComponent }
+      { path: 'edittask/:id', component: EdittaskComponent }
       
     ])
   ],

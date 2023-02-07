@@ -23,7 +23,7 @@ export class GetallComponent implements OnInit {
   getalluserdetails() {
     debugger
     this.service.getAllUsers().subscribe((res) => {
-      this.users = res
+      this.users = res;
     })
   }
   delete(id: any) {

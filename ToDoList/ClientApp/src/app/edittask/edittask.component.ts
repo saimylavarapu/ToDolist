@@ -18,28 +18,25 @@ export class EdittaskComponent implements OnInit {
     private router: Router, private Service: UserClient) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params) => {
-      if (params) {
-        this.id = params.id;
-        this.gettask();
-        this.getallemployee()
-
-      }
-    })
-
-
+    //this.route.params.subscribe((params) => {
+    //  if (params) {
+    //    this.id = params.id;
+    //    this.gettask();
+    //    this.getallemployee()
+    //  }
+    //})
   }
 
-  gettask() {
-    debugger
-    this.service.getByID(this.id).subscribe((res) => {
-      this.edit = res[0];
-    })
-  }
-  getallemployee() {
-    this.Service.getAllUsers().subscribe((res) => {
-      this.users = res;
-    })
-  }
+  //gettask() {
+  //  debugger
+  //  this.service.getByID(this.id).subscribe((res) => {
+  //    this.edit = res[0];
+  //  })
+  //}
+  //getallemployee() {
+  //  this.Service.getAllUsers().subscribe((res) => {
+  //    this.users = res;
+  //  })
+  //}
 
 }
