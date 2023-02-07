@@ -5,7 +5,7 @@
     "ng": "ng",
     "prestart": "node aspnetcore-https",
     "start": "run-script-os",
-    "start:windows": "ng serve --port 44448 --ssl --ssl-cert %APPDATA%\\ASP.NET\\https\\%npm_package_name%.pem --ssl-key %APPDATA%\\ASP.NET\\https\\%npm_package_name%.key",
+    "start:windows": "ng serve --port 44448 --ssl --ssl-cert \"%APPDATA%\"\\ASP.NET\\https\\%npm_package_name%.pem --ssl-key \"%APPDATA%\"\\ASP.NET\\https\\%npm_package_name%.key",
     "start:default": "ng serve --port 44448 --ssl --ssl-cert $HOME/.aspnet/https/${npm_package_name}.pem --ssl-key $HOME/.aspnet/https/${npm_package_name}.key",
     "build": "ng build",
     "build:ssr": "ng run ToDoList:server:dev",
@@ -29,6 +29,7 @@
     "popper.js": "^1.16.0",
     "run-script-os": "^1.1.6",
     "rxjs": "~7.5.5",
+    "sweetalert2": "^11.7.1",
     "tslib": "^2.4.0",
     "zone.js": "~0.11.6"
   },
@@ -49,6 +50,5 @@
   },
   "overrides": {
     "autoprefixer": "10.4.5"
-  },
-  "optionalDependencies": {}
+  }
 }

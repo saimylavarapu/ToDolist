@@ -25,12 +25,12 @@ namespace Repository.TaskRepository
             {
                 var iteam = new ToDoTask();
                 iteam.TaskName = user.TaskName;
-                iteam.IsActive = user.IsActive;
-                iteam.ISDelete= user.ISDelete;
-                iteam.CreatedDate = user.CreatedDate;
+                iteam.IsActive = true;
+                iteam.ISDelete= false;
+                iteam.CreatedDate = DateTime.UtcNow;
                 iteam.FKUserID = user.FKUserID;
 
-                await _context.tasks.AddRangeAsync(iteam);
+                await _context.tasks.AddAsync(iteam);
                 await _context.SaveChangesAsync();
                 return true;
 

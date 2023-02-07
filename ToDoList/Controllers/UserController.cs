@@ -93,5 +93,21 @@ namespace ToDoList.Controllers
                 return BadRequest();
             }
         }
+        [HttpGet]
+        [Route("GetAllTaskByID")]
+        public async Task<List<UserTaskDTO>>GetAllTaskByID(int id)
+        {
+            try
+            {
+                var result=await _UserRepo.GetAllTaskByID(id);
+
+                return result;
+
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

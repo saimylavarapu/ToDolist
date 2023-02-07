@@ -7,16 +7,26 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
+
+import { AddemployeeComponent } from './addemployee/addemployee.component';
+import { GetallComponent } from './getall/getall.component';
+import { EditComponent } from './edit/edit.component';
+import { AddTaskComponent } from './add-task/add-task.component';
+import { ViewTasksComponent } from './view-tasks/view-tasks.component';
+import { ViewAlltasksComponent } from './view-alltasks/view-alltasks.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
-    FetchDataComponent
+    ViewTasksComponent,
+    EditComponent,
+    ViewAlltasksComponent,
+    AddemployeeComponent,
+    AddTaskComponent,
+    GetallComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -24,8 +34,13 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'home', component: HomeComponent },
+      { path: 'addemployee', component: AddemployeeComponent },
+      { path: 'Addtask', component: AddTaskComponent },
+      { path: 'getallusers', component: GetallComponent },
+      { path: 'edit/:id', component: EditComponent },
+      { path: 'viewalltask', component: ViewAlltasksComponent },
+      { path: 'viewtask/:id', component: ViewTasksComponent }
     ])
   ],
   providers: [],

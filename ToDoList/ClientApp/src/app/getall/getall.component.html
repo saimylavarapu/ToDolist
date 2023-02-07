@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div calss="col-2"></div>
+    <div class="col-8">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>userName</th>
+          <th>emailAddress</th>
+          <th>password</th>
+          <th>addresss</th>
+          <th>edit</th>
+          <th>Delete</th>
+          <th>View Tasks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let detail of users;let i = index">
+          <td>{{i+1}}</td>
+          <td>{{detail.userName}}</td>
+          <td>{{detail.emailAddress}}</td>
+          <td>{{detail.password}}</td>
+          <td>{{detail.addresss}}</td>
+          <td>
+            <button class="btn btn-primary" [routerLink]="['/edit',detail.userID]"> edit</button>
+          </td>
+          <td>
+            <button class="btn btn-danger" (click)="delete(detail.userID)">Delete</button>
+          </td>
+          <td>
+            <button class="btn btn-success" [routerLink]="['/viewtask',detail.userID]"  >View Tasks</button>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>

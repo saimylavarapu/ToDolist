@@ -9,7 +9,7 @@ namespace Models.DTO.UserDTO
 {
     public class UserDTOALL
     {
-        public int UserID { get; set; }
+        public int? UserID { get; set; }
         public string UserName { get; set; }
         public string? EmailAddress { get; set; }
         public string? Password { get; set; }

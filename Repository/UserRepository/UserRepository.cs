@@ -14,6 +14,7 @@ namespace Repository.UserRepository
     public class UserRepository : IUserRepository
     {
         private readonly ApplicationDbContext _context;
+        
         public UserRepository(ApplicationDbContext context)
         {
             _context=context;
@@ -28,12 +29,11 @@ namespace Repository.UserRepository
                 person.Addresss = user.Addresss;
                 person.EmailAddress = user.EmailAddress;
                 person.Password = user.Password;
-                person.CreatedDate = user.CreatedDate;
+                person.CreatedDate = DateTime.UtcNow;
                 person.ISDelete = false;
-                person.IsActive=true;
+                person.IsActive= true;
                 person.MobileNo=user.MobileNo;
-
-                await _context.Users.AddRangeAsync(person);
+                await _context.Users.AddAsync(person);
                 await _context.SaveChangesAsync();
                 return true;
 
@@ -65,6 +65,24 @@ namespace Repository.UserRepository
                 throw ex;
             }
             
+        }
+
+        public async Task<List<UserTaskDTO>> GetAllTaskByID(int ID)
+        {
+            try
+            {
+                var result = await _context.tasks.Where(x => !x.ISDelete && x.FKUserID == ID ).Select(x=>new UserTaskDTO
+                {
+                    PKTaskID=x.TaskID,
+                    TaskName=x.TaskName
+                }).ToListAsync();
+                return result;
+
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public async Task<List<UserDTOALL>> GetAllUsers()
@@ -122,11 +140,9 @@ namespace Repository.UserRepository
                 person.Addresss = user.Addresss;
                 person.MobileNo = user.MobileNo;
                 person.Password = user.Password;
-                person.IsActive = user.IsActive;
-                person.ISDelete = user.ISDelete;
-                person.CreatedDate = user.CreatedDate;
+            
                  
-                _context.SaveChangesAsync();
+               await _context.SaveChangesAsync();
             }
             else
             {

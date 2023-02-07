@@ -15,5 +15,7 @@ namespace Repository.UserRepository
         Task DeleteUser(int ID);
 
         Task<bool> AddUser(AddUserDTO user);
+
+        Task<List<UserTaskDTO>>GetAllTaskByID(int ID);  
     }
 }

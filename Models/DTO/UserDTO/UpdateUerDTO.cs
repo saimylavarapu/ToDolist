@@ -14,8 +14,6 @@ namespace Models.DTO.UserDTO
         public string? Password { get; set; }
         public int? MobileNo { get; set; }
         public string? Addresss { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public bool IsActive { get; set; }
-        public bool ISDelete { get; set; }
+    
     }
 }

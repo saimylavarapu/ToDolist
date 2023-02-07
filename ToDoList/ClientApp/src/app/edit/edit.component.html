@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-3"></div>
+  <div class="col-6">
+    <div class="card" style="margin-top:20px;border-radius:20px;">
+      <div class="row">
+        <div class="col-10">
+          <div class="" style="display:flex;margin-top:10px;margin-left:15px;">
+            <i class="fa fa-industry ram" aria-hidden="true"></i>
+            <h5 class="" style="padding-left: 10px; color: #1164D0">Add User</h5>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="row mb-3">
+        <div class="col-4 smscrs" style="text-align:right">
+          <p style="margin-top:10px;">User name<span style="color:red;">*</span></p>
+        </div>
+        <div class="col-7 smscrs1" style="margin-top:7px;">
+          <input type="text" name="userName" id="userName" [(ngModel)]="details.userName" class="form-control" required placeholder="User name">
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-4 smscrs" style="text-align:right">
+          <p style="margin-top:10px;">Email Id <span style="color:red;">*</span></p>
+        </div>
+        <div class="col-7 smscrs1" style="margin-top:7px;">
+          <input type="text" name="emailAddress" id="emailAddress" [(ngModel)]="details.emailAddress" class="form-control" required placeholder="Employee Id">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-4 smscrs" style="text-align:right">
+          <p style="margin-top:10px;">Password<span style="color:red;">*</span></p>
+        </div>
+        <div class="col-7 smscrs1" style="margin-top:7px;">
+          <input type="text" name="password" id="password" [(ngModel)]="details.password" class="form-control" required placeholder="Password">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-4 smscrs" style="text-align:right">
+          <p style="margin-top:10px;">Mobile no<span style="color:red;">*</span></p>
+        </div>
+        <div class="col-7 smscrs1" style="margin-top:7px;">
+          <input type="text" name="mobileNo" id="mobileNo" [(ngModel)]="details.mobileNo" class="form-control" required placeholder="Mobile no">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-4 smscrs" style="text-align:right">
+          <p style="margin-top:10px;">Address<span style="color:red;">*</span></p>
+        </div>
+        <div class="col-7 smscrs1" style="margin-top:7px;">
+          <input type="text" name="addresss" id="addresss" [(ngModel)]="details.addresss" class="form-control" required placeholder="Address">
+        </div>
+      </div>
+
+      <hr />
+      <div class="row mb-3">
+        <div class="col-7"></div>
+        <div class="col-2">
+          <button type="button" class="btn btn-primary" (click)="update()" style="margin-top:10px;">Update </button>
+        </div>
+        <div class="col-2">
+          <button type="button" class="btn btn-primary" style="margin-top:10px;" [routerLink]="['/home']">Back</button>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="col-3"></div>
+  </div>

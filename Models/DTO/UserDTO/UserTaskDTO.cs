@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Models.DTO.TaskDTO
+namespace Models.DTO.UserDTO
 {
-    public class AddTaskDTO
+    public class UserTaskDTO
     {
+        public int PKTaskID { get; set; }
         public string TaskName { get; set; }
-        
-        public int FKUserID { get; set; }
 
+        
     }
 }
