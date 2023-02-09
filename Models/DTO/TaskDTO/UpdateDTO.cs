@@ -10,9 +10,8 @@ namespace Models.DTO.TaskDTO
     {
         public int PKTaskID { get; set; }
         public string TaskName { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public bool IsActive { get; set; }
-        public bool ISDelete { get; set; }
+        
+       
         public int FKUserID { get; set; }
     }
 }

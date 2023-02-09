@@ -1057,9 +1057,6 @@ export interface IToDoTask {
 export class UpdateDTO implements IUpdateDTO {
   pkTaskID?: number;
   taskName?: string | null;
-  createdDate?: Date;
-  isActive?: boolean;
-  isDelete?: boolean;
   fkUserID?: number;
 
   constructor(data?: IUpdateDTO) {
@@ -1075,9 +1072,6 @@ export class UpdateDTO implements IUpdateDTO {
     if (_data) {
       this.pkTaskID = _data["pkTaskID"] !== undefined ? _data["pkTaskID"] : <any>null;
       this.taskName = _data["taskName"] !== undefined ? _data["taskName"] : <any>null;
-      this.createdDate = _data["createdDate"] ? new Date(_data["createdDate"].toString()) : <any>null;
-      this.isActive = _data["isActive"] !== undefined ? _data["isActive"] : <any>null;
-      this.isDelete = _data["isDelete"] !== undefined ? _data["isDelete"] : <any>null;
       this.fkUserID = _data["fkUserID"] !== undefined ? _data["fkUserID"] : <any>null;
     }
   }
@@ -1093,9 +1087,6 @@ export class UpdateDTO implements IUpdateDTO {
     data = typeof data === 'object' ? data : {};
     data["pkTaskID"] = this.pkTaskID !== undefined ? this.pkTaskID : <any>null;
     data["taskName"] = this.taskName !== undefined ? this.taskName : <any>null;
-    data["createdDate"] = this.createdDate ? this.createdDate.toISOString() : <any>null;
-    data["isActive"] = this.isActive !== undefined ? this.isActive : <any>null;
-    data["isDelete"] = this.isDelete !== undefined ? this.isDelete : <any>null;
     data["fkUserID"] = this.fkUserID !== undefined ? this.fkUserID : <any>null;
     return data;
   }
@@ -1104,9 +1095,6 @@ export class UpdateDTO implements IUpdateDTO {
 export interface IUpdateDTO {
   pkTaskID?: number;
   taskName?: string | null;
-  createdDate?: Date;
-  isActive?: boolean;
-  isDelete?: boolean;
   fkUserID?: number;
 }
 

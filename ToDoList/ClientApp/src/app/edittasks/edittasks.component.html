@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-3"></div>
+  <div class="col-6">
+    <div class="card" style="margin-top:20px;border-radius:20px;">
+      <div class="row">
+        <div class="col-10">
+          <div class="" style="display:flex;margin-top:10px;margin-left:15px;">
+            <i class="fa fa-industry ram" aria-hidden="true"></i>
+            <h5 class="" style="padding-left: 10px; color: #1164D0">Add Tasks</h5>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="row mb-3">
+        <div class="col-4 smscrs" style="text-align:right">
+          <p style="margin-top:10px;">Add Task Name<span style="color:red;">*</span></p>
+        </div>
+        <div class="col-7 smscrs1" style="margin-top:7px;">
+          <textarea class="form-control " id="taskname" name="taskname" placeholder="Task Name" [(ngModel)]="edit.taskName" required style="width: 98%; height: 150px; margin-left: 10px; border-radius: 10px;" rows="3"></textarea>
+
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-4 smscrs" style="text-align:right">
+          <p style="margin-top:10px;">Select Employee <span style="color:red;">*</span></p>
+        </div>
+        <div class="col-7 smscrs1" style="margin-top:7px;">
+          <select class="form-select" aria-label="Default select example" [(ngModel)]="edit.fkUserID" name="departid" style="margin-left: 10px; width: 90%">
+            <option selected disabled value="0">Select Employee</option>
+            <option value="{{id.userID}}" *ngFor="let id of users">{{id.userName}}</option>
+          </select>
+        </div>
+      </div>
+
+
+      <hr />
+      <div class="row mb-3">
+
+        <div class="col-7">
+
+        </div>
+
+        <div class="col-2">
+          <button type="button" class="btn btn-primary" (click)="updatetask()" style="margin-top:10px;">update Task</button>
+        </div>
+        <div class="col-2">
+          <button type="button" class="btn btn-primary" style="margin-top:10px;" [routerLink]="['/home']">Back</button>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-3"></div>
+  </div>

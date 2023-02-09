@@ -68,10 +68,8 @@ namespace Repository.TaskRepository
                 {
                     TaskID = x.TaskID,  
                     TaskName = x.TaskName,
-                    IsActive = x.IsActive,
-                    ISDelete = x.ISDelete,
-                    CreatedDate = x.CreatedDate,
-                    FKUserID=x.FKUserID
+                    CreatedDate = DateTime.UtcNow,
+                    FKUserID =x.FKUserID
                 }).ToListAsync();
                 return task;
             }
@@ -103,10 +101,9 @@ namespace Repository.TaskRepository
             if(iteam!= null)
             {
                 iteam.TaskName=taskk.TaskName;
-                iteam.CreatedDate = taskk.CreatedDate;
+              
                 iteam.FKUserID = taskk.FKUserID;
-                iteam.IsActive = true;
-                iteam.ISDelete = true;
+              
                 await _context.SaveChangesAsync();
             }
             else

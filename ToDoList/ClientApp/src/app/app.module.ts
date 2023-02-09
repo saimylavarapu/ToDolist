@@ -15,6 +15,7 @@ import { AddTaskComponent } from './add-task/add-task.component';
 import { ViewTasksComponent } from './view-tasks/view-tasks.component';
 import { ViewAlltasksComponent } from './view-alltasks/view-alltasks.component';
 import { EdittaskComponent } from './edittask/edittask.component';
+import { EdittasksComponent } from './edittasks/edittasks.component';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { EdittaskComponent } from './edittask/edittask.component';
     AddemployeeComponent,
     AddTaskComponent,
     GetallComponent,
-    EdittaskComponent
+    EdittasksComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -43,7 +44,7 @@ import { EdittaskComponent } from './edittask/edittask.component';
       { path: 'edit/:id', component: EditComponent },
       { path: 'viewalltask', component: ViewAlltasksComponent },
       { path: 'viewtask/:id', component: ViewTasksComponent },
-      { path: 'edittask/:id', component: EdittaskComponent }
+      { path: 'edits/:id', component: EdittasksComponent }
       
     ])
   ],

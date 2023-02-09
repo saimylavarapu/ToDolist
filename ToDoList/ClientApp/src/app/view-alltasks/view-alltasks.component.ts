@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskClient, TaskDTO } from '../shared/apiservice.service';
 import Swal from 'sweetalert2';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-alltasks',
@@ -11,7 +12,8 @@ import Swal from 'sweetalert2';
 export class ViewAlltasksComponent implements OnInit {
   gettask!: TaskDTO[];
 
-  constructor(private service: TaskClient) { }
+  constructor(private service: TaskClient, private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.getalltask();

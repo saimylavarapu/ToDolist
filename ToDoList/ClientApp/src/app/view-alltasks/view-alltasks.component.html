@@ -18,7 +18,7 @@
             <td>{{task.taskID}}</td>
             <td>{{task.taskName}}</td>
             <td>
-              <button class="btn btn-primary" [routerLink]="['/edittask',task.taskID]"> edit</button>
+              <button class="btn btn-primary" [routerLink]="['/edits',task.taskID]"> edit</button>
             </td>
             <td>
               <button class="btn btn-danger" (click)="delete(task.taskID)">Delete</button>
