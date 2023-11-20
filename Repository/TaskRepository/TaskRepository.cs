@@ -50,7 +50,7 @@ namespace Repository.TaskRepository
             {
                 iteam.IsActive = false;
                 iteam.ISDelete = true;
-                await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync(); 
             }
             else
             {

@@ -13,9 +13,7 @@ import Swal from 'sweetalert2';
 })
 export class EdittasksComponent implements OnInit {
   edit!: TaskByIDDTO;
-  
   users!: UserDTOALL[];
-
   id!: any;
 
   constructor(private service: TaskClient, private route: ActivatedRoute,
@@ -38,7 +36,6 @@ export class EdittasksComponent implements OnInit {
     })
   }
   getallemployee() {
-    
     this.Service.getAllUsers().subscribe((res) => {
       this.users = res;
     })

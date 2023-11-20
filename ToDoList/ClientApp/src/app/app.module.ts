@@ -14,8 +14,9 @@ import { EditComponent } from './edit/edit.component';
 import { AddTaskComponent } from './add-task/add-task.component';
 import { ViewTasksComponent } from './view-tasks/view-tasks.component';
 import { ViewAlltasksComponent } from './view-alltasks/view-alltasks.component';
-import { EdittaskComponent } from './edittask/edittask.component';
 import { EdittasksComponent } from './edittasks/edittasks.component';
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { EdittasksComponent } from './edittasks/edittasks.component';
     ViewAlltasksComponent,
     AddemployeeComponent,
     AddTaskComponent,
+ 
     GetallComponent,
     EdittasksComponent
   ],
@@ -35,6 +37,9 @@ import { EdittasksComponent } from './edittasks/edittasks.component';
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    NgxExtendedPdfViewerModule,
+    
+   
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
@@ -52,3 +57,4 @@ import { EdittasksComponent } from './edittasks/edittasks.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

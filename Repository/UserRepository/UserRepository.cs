@@ -36,9 +36,6 @@ namespace Repository.UserRepository
                 await _context.Users.AddAsync(person);
                 await _context.SaveChangesAsync();
                 return true;
-
-
-
             }
             catch(Exception ex)
             {

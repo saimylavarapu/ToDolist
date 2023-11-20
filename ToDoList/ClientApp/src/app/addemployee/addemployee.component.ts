@@ -21,7 +21,7 @@ export class AddemployeeComponent implements OnInit {
     //this.adduser.isActive = true;
     //this.adduser.isDelete = false;
     this.service.addUserDTO(this.adduser).subscribe((res) => {
-      
+      debugger
         Swal.fire({
           title: 'User Added Successfully',
           icon: 'success',
